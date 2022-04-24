@@ -10,15 +10,14 @@ app.get("/", (req, res) => {
 });
 
 // Video streaming
-app.get("/video/:videoname", (req, res) => {
-  let namefile = req.params.videoname;
+app.get("/video/:videoName", (req, res) => {
   const range = req.headers.range;
   if (!range) res.status(400).send("Range must be provided");
-
-  const videoPath = path.join(__dirname, "public", `${namefile}.mp4`);
+  let videoName = `${req.params.videoName}.mp4`;
+  const videoPath = path.join(__dirname, "public", videoName);
   const videoSize = fs.statSync(videoPath).size;
 
-  const chunkSize = 10 ** 6; // 10 powered by 6 equal 1000000bytes = 1mb
+  const chunkSize = 10 ** 6;
 
   const start = Number(range.replace(/\D/g, ""));
   const end = Math.min(start + chunkSize, videoSize - 1);
@@ -37,9 +36,8 @@ app.get("/video/:videoname", (req, res) => {
 });
 
 // Poster Image
-app.get("/:image_name", (req, res) => {
-  let imagefile = req.params.image_name;
-  res.sendFile(__dirname + "/public/" + imagefile);
+app.get("/:imageName", (req, res) => {
+  res.sendFile(__dirname + "/public/" + req.params.imageName);
 });
 
 app.listen(PORT, () => {

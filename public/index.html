@@ -1,14 +1,34 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home | Video Streaming</title>
-  </head>
-  <body>
-    <video controls preload="auto" src="/video/clouds" poster="/clouds.jpg" id="video-stream" width="700"></video>
-    <video controls preload="auto" src="/video/forest" poster="/forest.jpg" id="video-stream" width="700"></video>
-    <video controls preload="auto" src="/video/seoul" poster="/seoul.jpg" id="video-stream" width="700"></video>
-    <video controls preload="auto" src="/video/skate" poster="/skate.jpg" id="video-stream" width="700"></video>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Streaming</title>
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>
+    Videos Streaming Application
+  </h1>
+  <div id="main">
+    <div class="first">
+      <h3>Customer 1</h3>
+      <video controls preload="auto" src="/video/forest" poster="/forest.jpg" id="video-stream" width="600"></video>
+    </div>
+    <div class="second">
+      <h3>Customer 2</h3>
+      <video controls preload="auto" src="/video/clouds" poster="/clouds.jpg" id="video-stream" width="600"></video>
+    </div>
+    <div class="third">
+      <h3>Customer 3</h3>
+      <video controls preload="auto" src="/video/seoul" poster="/seoul.jpg" id="video-stream" width="600"></video>
+    </div>
+    <div class="fourth">
+      <h3>Customer 4</h3>
+      <video controls preload="auto" src="/video/skate" poster="/skate.jpg" id="video-stream" width="600"></video>
+    </div>
+  </div>
+</body>
 </html>
